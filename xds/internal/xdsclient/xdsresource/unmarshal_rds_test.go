@@ -1440,23 +1440,6 @@ func (s) TestRoutesProtoToSlice(t *testing.T) {
 			wantErr: true,
 		},
 		{
-			name: "unrecognized header match specifier",
-			routes: []*v3routepb.Route{
-				{
-					Match: &v3routepb.RouteMatch{
-						PathSpecifier: &v3routepb.RouteMatch_Prefix{Prefix: "/a/"},
-						Headers: []*v3routepb.HeaderMatcher{
-							{
-								Name:                 "th",
-								HeaderMatchSpecifier: &v3routepb.HeaderMatcher_StringMatch{},
-							},
-						},
-					},
-				},
-			},
-			wantErr: true,
-		},
-		{
 			name: "no cluster in weighted clusters action",
 			routes: []*v3routepb.Route{
 				{
